@@ -60,7 +60,6 @@ p + p {
 	max-width: 16rem;
 	padding-bottom: 1rem;
 	background: #00000042;
-	overflow-y: scroll;
 }
 
 .controls-toggle {
@@ -98,7 +97,7 @@ p + p {
 .inputs .btn {
 	display: block;
 	margin: 0;
-	padding: 1rem;
+	padding: 0.5rem 1rem;
 	border: none;
 	background: #f0f0f0;
 }
@@ -110,17 +109,27 @@ p + p {
 .inputs .value {
 	flex: 1;
 	padding: 0 1rem;
-	font-size: 42px;
+	font-size: 24px;
 	line-height: 1;
 	color: #f0f0f0;
+}
+
+@media screen and (min-width: 768px) {
+	.inputs .btn {
+		padding: 1rem;
+	}
+
+	.inputs .value {
+		font-size: 42px;
+	}
 }
 
 .spectrogram {
 	position: absolute;
 	z-index: 1;
-	top: 4vmin;
+	top: 4rem;
 	right: 0;
-	bottom: 4vmin;
+	bottom: 4rem;
 	left: 0;
 }
 
@@ -131,43 +140,3 @@ p + p {
 	width: 100%;
 	height: 100%;
 }
-
-/* 
-.control {
-	border: 1px solid #f0f0f0;
-	border-width: 0 1px 1px 1px;
-}
-
-.control .label {
-	display: block;
-	margin: 0;
-	padding: 1rem;
-	font-size: 1rem;
-}
-
-.control .inputs {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.control .inputs .btn {
-	display: block;
-	margin: 0;
-	padding: 1rem;
-	border: none;
-	background: #f0f0f0;
-}
-
-.control .inputs .btn.btn--inactive {
-	background: #2d2d2d;
-}
-
-.control .inputs .value {
-	flex: 1;
-	padding: 0 1rem;
-	font-size: 42px;
-	line-height: 1;
-	color: #f0f0f0;
-}
-*/
