@@ -30,10 +30,10 @@ p + p {
 
 .wrap {
 	position: absolute;
-	top: 3vmin;
-	right: 3vmin;
-	bottom: 3vmin;
-	left: 3vmin;
+	top: 12vmin;
+	right: 4vmin;
+	bottom: 12vmin;
+	left: 4vmin;
 	z-index: 0;
 }
 
