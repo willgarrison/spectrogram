@@ -49,7 +49,7 @@ const app = {
 		UI
 		*/
 		peakBright: 255,
-		midBright: 165,
+		midBright: 60,
 	},
 
 	resizeCanvasTimeout: null,
@@ -217,7 +217,7 @@ const app = {
 	},
 
 	removeClickMessage: function () {
-		document.querySelector(".spectrogram__message").remove();
+		document.querySelector(".click-init-message").remove();
 	},
 
 	setupControls: function () {
