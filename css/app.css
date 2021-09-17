@@ -30,9 +30,9 @@ p + p {
 
 .wrap {
 	position: absolute;
-	top: 12vmin;
+	top: 4vmin;
 	right: 4vmin;
-	bottom: 12vmin;
+	bottom: 4vmin;
 	left: 4vmin;
 	z-index: 0;
 }
@@ -60,6 +60,7 @@ p + p {
 	max-width: 16rem;
 	padding-bottom: 1rem;
 	background: #00000042;
+	overflow-y: scroll;
 }
 
 .controls-toggle {
@@ -117,9 +118,9 @@ p + p {
 .spectrogram {
 	position: absolute;
 	z-index: 1;
-	top: 0;
+	top: 4vmin;
 	right: 0;
-	bottom: 0;
+	bottom: 4vmin;
 	left: 0;
 }
 
