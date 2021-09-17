@@ -384,6 +384,7 @@ const app = {
 		const h = app.canvasWrap.offsetHeight;
 		app.canvas.width = w * pixelRatio;
 		app.canvas.height = h * pixelRatio;
+		app.canvasWrap.style.height = window.innerHeight + "px";
 	},
 
 	clearCanvas: function () {

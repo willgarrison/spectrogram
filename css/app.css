@@ -30,11 +30,12 @@ p + p {
 
 .wrap {
 	position: absolute;
-	top: 4vmin;
-	right: 4vmin;
-	bottom: 4vmin;
-	left: 4vmin;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	z-index: 0;
+	overflow-y: scroll;
 }
 
 .click-init-message {
@@ -46,19 +47,22 @@ p + p {
 	z-index: 9;
 	background: #000;
 	max-width: 12em;
-	padding: 8rem 0 0 0;
+	padding: 2rem;
 	font-size: 42px;
 	line-height: 1;
 	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .menu {
 	position: absolute;
 	z-index: 2;
-	top: 0;
-	left: 0;
+	top: 1rem;
+	left: 1rem;
 	max-width: 16rem;
-	padding-bottom: 1rem;
+	padding-bottom: 2rem;
 	background: #00000042;
 }
 
@@ -127,9 +131,9 @@ p + p {
 .spectrogram {
 	position: absolute;
 	z-index: 1;
-	top: 4rem;
+	top: 0;
 	right: 0;
-	bottom: 4rem;
+	bottom: 0;
 	left: 0;
 }
 
