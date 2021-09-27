@@ -221,16 +221,16 @@ const app = {
 	},
 
 	setupControls: function () {
-		controlsArea = document.querySelector(".controls");
+		controlsDisplay = document.querySelector(".controls");
 
 		btnToggleMenu = document.querySelector(".controls-toggle__btn");
 		btnToggleMenu.addEventListener("click", function () {
 			if (app.controlsVisible) {
-				controlsArea.setAttribute("style", "display: none;");
+				controlsDisplay.classList.add("controls--hidden")
 				app.controlsVisible = false;
 				btnToggleMenu.innerHTML = "menu";
 			} else {
-				controlsArea.removeAttribute("style");
+				controlsDisplay.classList.remove("controls--hidden")
 				app.controlsVisible = true;
 				btnToggleMenu.innerHTML = "close";
 			}
@@ -288,7 +288,7 @@ const app = {
 			controlDisplay.appendChild(labelDisplay);
 			controlDisplay.appendChild(inputsDisplay);
 
-			controlsArea.appendChild(controlDisplay);
+			controlsDisplay.appendChild(controlDisplay);
 		});
 	},
 
@@ -384,7 +384,7 @@ const app = {
 		const h = app.canvasWrap.offsetHeight;
 		app.canvas.width = w * pixelRatio;
 		app.canvas.height = h * pixelRatio;
-		app.canvasWrap.style.height = window.innerHeight + "px";
+		// app.canvasWrap.style.height = window.innerHeight + "px";
 	},
 
 	clearCanvas: function () {
