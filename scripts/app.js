@@ -19,7 +19,7 @@ const app = {
 		32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384,
 		and 32768. Defaults to 2048.
 		*/
-		fftSize: 2048,
+		fftSize: 4096,
 		/* 
 		smoothingTimeConstant
 		A double within the range 0 to 1 (0 meaning no time
@@ -43,13 +43,19 @@ const app = {
 		value is -30 dB. 
 		*/
 		minDecibels: -90,
-		maxDecibels: -30,
+		maxDecibels: -80,
+		
+		/* 
+		frequencyMin, frequencyMax
+		*/
+		frequencyMin: 17000,
+		frequencyMax: 20000,
 
 		/*
 		UI
 		*/
 		peakBright: 255,
-		midBright: 60,
+		midBright: 120,
 	},
 
 	resizeCanvasTimeout: null,
@@ -211,9 +217,13 @@ const app = {
 		app.analyser.fftSize = app.config.fftSize;
 		app.spectrum = new Uint8Array(app.analyser.frequencyBinCount);
 		app.blockWidth = 1;
-		app.blockHeight = Math.ceil(
-			app.canvas.height / app.analyser.frequencyBinCount
-		);
+		app.blockHeight = app.getBlockHeight();
+	},
+
+	getBlockHeight: function(){
+		return Math.ceil(
+			app.canvas.height / (app.analyser.frequencyBinCount * ((app.config.frequencyMax-app.config.frequencyMin)/app.config.sampleRate))
+		);					
 	},
 
 	removeClickMessage: function () {
@@ -384,7 +394,7 @@ const app = {
 		const h = app.canvasWrap.offsetHeight;
 		app.canvas.width = w * pixelRatio;
 		app.canvas.height = h * pixelRatio;
-		// app.canvasWrap.style.height = window.innerHeight + "px";
+		app.blockHeight = app.getBlockHeight();
 	},
 
 	clearCanvas: function () {
@@ -396,39 +406,41 @@ const app = {
 		// Fill spectrum with data
 		app.analyser.getByteFrequencyData(app.spectrum);
 
-		let amp = 0;
-		let yPosition = 0;
+		app.canvasCtx.fillStyle = "rgb(0,0,0)";
+		app.canvasCtx.fillRect(
+			app.xPosition,
+			app.canvas.height,
+			app.blockWidth,
+			app.canvas.height,
+		);
 
-		for (var i = 0; i < app.analyser.frequencyBinCount; i++) {
-			// let frequency = (i * audioCtx.sampleRate) / fftSize;
-			fillColor =
-				app.spectrum[i] > 0
-					? app.remap(
-							app.spectrum[i],
-							0,
-							255,
-							app.config.midBright,
-							app.config.peakBright
-					  )
-					: 0;
-			yPosition = Math.round(
-				app.remap(i, 0, app.analyser.frequencyBinCount, app.canvas.height, 0)
-			);
-			app.canvasCtx.fillStyle = "rgb(0,0,0)";
-			app.canvasCtx.fillRect(
-				app.xPosition,
-				yPosition,
-				app.blockWidth,
-				app.blockHeight
-			);
-			app.canvasCtx.fillStyle =
-				"rgb(" + fillColor + ", " + fillColor + ", " + fillColor + ")";
-			app.canvasCtx.fillRect(
-				app.xPosition,
-				yPosition,
-				app.blockWidth,
-				app.blockHeight
-			);
+		let yPosition = 0;
+		for (var i = 0; i <= app.analyser.frequencyBinCount; i++) {
+			let frequency = (i * app.audioCtx.sampleRate) / app.config.fftSize;
+			if(frequency > 17000 && frequency < 20000){
+				fillColor =
+					app.spectrum[i] > 0
+						? app.remap(
+								app.spectrum[i],
+								0,
+								255,
+								app.config.midBright,
+								app.config.peakBright
+							)
+						: 0;
+				yPosition = Math.round(
+					app.remap(frequency, 17000, 20000, app.canvas.height, 0)
+				);
+
+				app.canvasCtx.fillStyle =
+					"rgb(" + fillColor + ", " + fillColor + ", " + fillColor + ")";
+				app.canvasCtx.fillRect(
+					app.xPosition,
+					yPosition,
+					app.blockWidth,
+					app.blockHeight
+				);
+			}
 		}
 
 		// increment x, if x is greater than canvas width, reset it to 0
