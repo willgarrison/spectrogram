@@ -3,36 +3,22 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta
-    http-equiv="X-UA-Compatible"
-    content="IE=edge"
-  >
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
   <title>Standard Stars-o-Gram</title>
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-  <link
-    rel="preconnect"
+  <link rel="preconnect"
+    href="https://fonts.googleapis.com">
+  <link rel="preconnect"
     href="https://fonts.gstatic.com"
-    crossorigin
-  >
-  <link
-    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
-    rel="stylesheet"
-  >
-  <link
-    rel="stylesheet"
-    href="css/normalize.css"
-  >
-  <link
-    rel="stylesheet"
-    href="css/app.css?v=202109170158"
-  >
+    crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="css/normalize.css">
+  <link rel="stylesheet"
+    href="css/app.css?v=202109170158">
   <script src="scripts/app.js"></script>
 </head>
 
@@ -42,22 +28,24 @@
 
     <div class="click-init-message">
       <div>
-        <p>Click/tap anywhere</p>
-        <p>When prompted,<br /> please allow microphone access</p>
+        <h1>Standard Stars Spectral Decoder</h1>
+        <p>Please Click/tap anywhere.</p>
+        <p>When prompted,<br /> please allow microphone access.</p>
       </div>
     </div>
 
     <div class="menu">
       <div class="controls-toggle">
-        <button class="controls-toggle__btn">menu</button>
+        <button class="btn controls-toggle__btn">Options</button>
       </div>
       <div class="controls controls--hidden"></div>
     </div>
 
-    <div class="spectrogram">
-      <canvas class="canvas"></canvas>
+    <div class="canvas-outer">
+      <div class="canvas-box">
+        <canvas class="canvas-element"></canvas>
+      </div>
     </div>
-
   </div>
 </body>
 

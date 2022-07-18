@@ -1,168 +1,155 @@
 html,
 body {
-	position: relative;
-	margin: 0;
-	padding: 0;
-	width: 100vw;
-	height: 100vh;
-	background: #000000;
-	font-family: "Share Tech Mono", SFMono-Regular, Menlo, Monaco, Consolas,
-		"Liberation Mono", "Courier New", monospace;
-	font-size: 16px;
-	line-height: 1;
-	color: #f0f0f0;
-	user-select: none;
-	touch-action: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  font-family: "Share Tech Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 16px;
+  line-height: 1;
+  color: #f0f0f0;
+  user-select: none;
+  touch-action: none;
 }
 
 img {
-	display: block;
-	margin: 0;
+  display: block;
+  margin: 0;
 }
 
 p {
-	margin: 0;
-}
-
-p + p {
-	margin-top: 1em;
+  margin: 0;
 }
 
 .wrap {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 0;
-	overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  overflow-y: scroll;
 }
 
 .click-init-message {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 9;
-	background: #000;
-	display: flex;
-	align-items: center;		
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  background: #000;
+  display: flex;
+  align-items: center;
 }
 
 .click-init-message > div {
+  padding: 2rem;
+}
+
+.click-init-message > div > h1 {
+	font-size: 16px;
+	line-height: 1;	
+}
+
+.click-init-message > div > p {
 	max-width: 12em;
-	padding: 2rem;
 	font-size: 42px;
-	line-height: 1;
-	text-transform: uppercase;
+	line-height: 1;	
+	text-transform: uppercase;	
+	margin: 1em 0;
 }
 
 .menu {
-	position: absolute;
-	z-index: 2;
-	top: 1rem;
-	left: 1rem;
-	width: 260px;
-	padding-bottom: 2rem;
-	background: #00000042;
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 1rem;
+  width: 14rem;
+  padding-bottom: 2rem;
 }
 
 .controls-toggle {
 }
 
 .controls-toggle__btn {
-	padding: 0 1rem;
-	margin: 0;
-	background: #f0f0f0;
-	border: none;
-	font-size: 10px;
-	line-height: 2rem;
+  padding: 0 1rem;
+  margin: 0;
+  background: #000;
+  border: 1px solid white;
+  font-size: 10px;
+  line-height: 2rem;
+  color: white;
 }
 
 .controls {
-	width: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .controls--hidden {
-	display: none;
+  display: none;
 }
 
 .control {
 }
 
 .label {
-	display: block;
-	margin: 0;
-	padding: 1.5rem 0 0.5rem 0;
-	font-size: 1rem;
-	line-height: 1;
+  display: block;
+  margin: 0;
+  padding: 1.5rem 0 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .inputs {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .inputs .btn {
-	display: block;
-	margin: 0;
-	padding: 0.5rem 1rem;
-	border: none;
-	background: #f0f0f0;
+  display: block;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #f0f0f0;
 }
 
 .inputs .btn.btn--inactive {
-	background: #2d2d2d;
+  background: #2d2d2d;
 }
 
 .inputs .value {
-	flex: 1;
-	padding: 0 1rem;
-	font-size: 24px;
-	line-height: 1;
-	color: #f0f0f0;
+  flex: 1;
+  padding: 0 1rem;
+  font-size: 24px;
+  line-height: 1;
+  color: #f0f0f0;
 }
 
-@media screen and (min-width: 768px) {
-	.inputs .btn {
-		padding: 1rem;
-	}
-
-	.inputs .value {
-		font-size: 42px;
-	}
+.canvas-outer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.spectrogram {
-	position: absolute;
-	z-index: 1;
-	top: 1rem;
-	right: 1rem;
-	bottom: 1rem;
-	left: 1rem;
+.canvas-box {
+  position: absolute;
 }
 
-.canvas {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-@media screen and (min-width: 780px){
-
-	.controls-toggle {
-		display: none;
-	}
-
-	.controls--hidden {
-		display: block;
-	}
-
-	.spectrogram {
-		left: 300px;
-		border: 1px solid;
-	}	
+.canvas-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
 }
