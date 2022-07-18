@@ -58,6 +58,7 @@ const app = {
 		*/
     peakBright: 255,
     midBright: 15,
+    fillOpacity: 0.9,
   },
 
   controls: [
@@ -109,9 +110,15 @@ const app = {
       step: 15,
       precision: 0,
     },
+    {
+      key: "fillOpacity",
+      label: "Fill Opacity",
+      min: 0,
+      max: 1,
+      step: 0.1,
+      precision: 1,
+    },    
   ],
-
-  fillOpacity: 0.9,
 
   resizeCanvasTimeout: null,
 
@@ -472,7 +479,7 @@ const app = {
       const yPosition = app.canvasElement.height - app.blockHeight - i * app.blockHeight;
 
       // Draw x, y position
-      app.canvasCtx.fillStyle = "rgba(" + fillColor + ", " + fillColor + ", " + fillColor + ", " + app.fillOpacity + ")";
+      app.canvasCtx.fillStyle = "rgba(" + fillColor + ", " + fillColor + ", " + fillColor + ", " + app.config.fillOpacity + ")";
       app.canvasCtx.fillRect(app.xPosition, yPosition, app.blockWidth, app.blockHeight);
     }
 

@@ -1,0 +1,14 @@
+{
+    "/dist/scripts/app.js": "/dist/scripts/app.js",
+    "/dist/styles/main.css": "/dist/styles/main.css",
+    "/dist/assets/images/arrow-left.svg": "/dist/assets/images/arrow-left.svg",
+    "/dist/assets/images/arrow-right.svg": "/dist/assets/images/arrow-right.svg",
+    "/dist/android-chrome-192x192.png": "/dist/android-chrome-192x192.png",
+    "/dist/android-chrome-512x512.png": "/dist/android-chrome-512x512.png",
+    "/dist/apple-touch-icon.png": "/dist/apple-touch-icon.png",
+    "/dist/favicon-16x16.png": "/dist/favicon-16x16.png",
+    "/dist/favicon-32x32.png": "/dist/favicon-32x32.png",
+    "/dist/favicon.ico": "/dist/favicon.ico",
+    "/dist/site.webmanifest": "/dist/site.webmanifest",
+    "/dist/index.html": "/dist/index.html"
+}
