@@ -25,14 +25,14 @@ const app = {
 		32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384,
 		and 32768. Defaults to 2048.
 		*/
-    fftSize: 1024,
+    fftSize: 2048,
 
     /* 
 		smoothingTimeConstant
 		A double within the range 0 to 1 (0 meaning no time
 		averaging). The default value is 0.8. 
 		*/
-    smoothingTimeConstant: 0.0,
+    smoothingTimeConstant: 0.1,
 
     /* 
 		The minimum and maximum value for the range of results 
