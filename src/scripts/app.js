@@ -253,6 +253,11 @@ const app = {
   setupControls: function () {
     controlsDisplay = document.querySelector(".controls");
 
+    btnSync = document.querySelector(".controls-sync__btn");
+    btnSync.addEventListener("click", function () {
+      app.sync();
+    });
+
     btnToggleMenu = document.querySelector(".controls-toggle__btn");
     btnToggleMenu.addEventListener("click", function () {
       if (app.controlsVisible) {

@@ -71,9 +71,19 @@ p {
   padding-bottom: 2rem;
 }
 
+.menu-controls {
+  display: flex;
+  align-items: center;
+}
+
+.controls-sync {
+  margin-right: 1rem;
+}
+
 .controls-toggle {
 }
 
+.controls-sync__btn, 
 .controls-toggle__btn {
   padding: 0 1rem;
   margin: 0;
